@@ -1,13 +1,10 @@
 import express from "express";
-import { createServer } from "http";
-import config from "./config";
-import { setConnection } from "./database";
-import { router } from "./router";
 
-setConnection();
 const app = express();
-const httpServer = createServer(app);
-router(app);
-httpServer.listen(config.port, () => {
-  return console.log(`server is listening on ${config.port}`);
+const port = 3000;
+app.get("/", (req, res) => {
+  res.send("La route!");
+});
+app.listen(port, () => {
+  return console.log(`server is listening on ${port}`);
 });

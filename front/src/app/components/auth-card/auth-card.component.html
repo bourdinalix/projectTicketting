@@ -1,4 +1,4 @@
-<div class="auth-card">
+<!-- <div class="auth-card">
     <div class="auth-card-wrapper">
 
       <div class="auth-card-form-container">
@@ -7,16 +7,16 @@
 
         <div class="auth-card-error" *ngIf="displayError && from === 'login' ">Les identifiants sont incorrects</div>
 
-        <form class="auth-card-form" *ngIf="userForm" [formGroup]="userForm">
+        <form class="auth-card-form" [formGroup]="userForm">
           <ng-template [ngIf]="from === 'register'">
             <mat-form-field appearance="outline">
               <mat-label>Prénom</mat-label>
-              <input matInput name="firstame" formControlName="firstname">
+              <input matInput name="firstName" formControlName="firstName">
             </mat-form-field>
 
             <mat-form-field appearance="outline">
               <mat-label>Nom de famille</mat-label>
-              <input matInput name="lastname" formControlName="lastname">
+              <input matInput name="lastName" formControlName="lastName">
             </mat-form-field>
           </ng-template>
           <mat-form-field appearance="outline">
@@ -37,8 +37,31 @@
       </div>
 
       <div class="auth-card-media">
-        <img src="assets/event.jpg" alt="">
+        <img src="assets/food.jpg" alt="">
       </div>
 
+    </div>
+  </div> -->
+
+  <div class="auth-card">
+    <div class="auth-card-wrapper">
+
+      <div class="auth-card-form">
+        <mat-form-field appearance="outline">
+          <mat-label>Input</mat-label>
+          <input matInput class="toto">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Select</mat-label>
+          <mat-select>
+            <mat-option value="one">First option</mat-option>
+            <mat-option value="two">Second option</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Textarea</mat-label>
+          <textarea matInput></textarea>
+        </mat-form-field>
+      </div>
     </div>
   </div>

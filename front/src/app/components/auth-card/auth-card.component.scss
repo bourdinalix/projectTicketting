@@ -1,13 +1,15 @@
 @import '~src/imports';
 
 .auth-card{
-  @include vertical-spacing(2);
+  @include vertical-spacing-inner;
   .auth-card-wrapper{
     @include wrapper;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: $white;
     border-radius: rem(10);
+    box-shadow: rem(0) rem(0) rem(15) rgba($black, 0.08);
   }
   .auth-card-form-container{
     width: 100%;
@@ -25,14 +27,13 @@
     }
     img{
       width: 100%;
-      height: 80vh;
+      height: 100%;
       object-fit: cover;
       border-radius: rem(10);
     }
   }
   .auth-card-title{
-    @include title;
-    margin-bottom: rem(40);
+    @include title();
   }
   .auth-card-error{
     color: $red;

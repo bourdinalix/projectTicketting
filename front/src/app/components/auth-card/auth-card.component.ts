@@ -28,14 +28,14 @@ export class AuthCardComponent implements OnInit {
     this.hide = true;
     this.displayError = false;
 
-    if(this.from === 'register'){
+    if(this.from === 'inscription'){
       this.userForm = this._fb.group({
-        lastname: ['', Validators.required],
-        firstname: ['', Validators.required],
+        lastName: ['', Validators.required],
+        firstName: ['', Validators.required],
         email: ['', Validators.required],
         password: ['', Validators.required],
       });
-    }else if(this.from === 'login'){
+    }else if(this.from === 'connexion'){
       this.userForm = this._fb.group({
         email: ['', Validators.required],
         password: ['', Validators.required],
@@ -44,18 +44,19 @@ export class AuthCardComponent implements OnInit {
   }
 
   onSubmit(){
-    if(this.from === 'register'){
-      this._auth._register(this.userForm.value).subscribe({
-        next : () => {
-          this._router.navigate(['home']);
-        }
-      })
-    }else if(this.from === 'login'){
-      this._auth._login(this.userForm.value).subscribe({
-        next : () => {
-          this._router.navigate(['home']);
-        }
-      })
-    }
+    console.log("toto");
+    // if(this.from === 'connexion'){
+    //   this._auth._connexion(this.userForm.value).subscribe({
+    //     next: () => {
+    //       this._router.navigate(['dashboard']);
+    //     }
+    //   });
+    // }else if(this.from === 'inscription'){
+    //   this._auth._inscription(this.userForm.value).subscribe({
+    //     next: () => {
+    //       this._router.navigate(['dashboard']);
+    //     }
+    //   })
+    // }
   }
 }
