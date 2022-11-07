@@ -1,0 +1,60 @@
+<div class="event-form">
+    <div class="event-form-wrapper">
+        <h1 class="event-form-title">Créer votre événments</h1>
+
+        <form class="event-form-form" *ngIf="eventForm" [formGroup]="eventForm">
+            <mat-form-field appearance="outline">
+                <mat-label>Titre de l'événement</mat-label>
+                <input matInput name="title" formControlName="title">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Date</mat-label>
+                <input matInput name="date" formControlName="date">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Organisateurs</mat-label>
+                <input matInput name="organizer" formControlName="organizer">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Prix</mat-label>
+                <input matInput name="price" formControlName="price">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Nombre de tickets max</mat-label>
+                <input matInput name="maxTicket" formControlName="maxTicket">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Nombre de tickets restants</mat-label>
+                <input matInput name="leftTicket" formControlName="leftTicket">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Description</mat-label>
+                <input matInput name="description" formControlName="description">
+            </mat-form-field>
+
+            <!-- <mat-form-field appearance="outline">
+                IMAGE
+                <mat-label>Description</mat-label>
+                <input matInput name="description" formControlName="description">
+            </mat-form-field> -->
+
+            <mat-form-field appearance="outline">
+                <mat-label>Lieux</mat-label>
+                <input matInput name="location" formControlName="location">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Style</mat-label>
+                <input matInput name="style" formControlName="style">
+            </mat-form-field>
+
+            <button mat-raised-button (click)="_onSubmit()" [disabled]="eventForm.invalid">Créer mon événement</button>
+        </form>
+    </div>
+</div>

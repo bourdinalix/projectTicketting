@@ -1,0 +1,30 @@
+@import '~src/imports';
+
+.banner{
+    @include vertical-spacing-top;
+    @include vertical-spacing-bottom;
+    background-image: url('../../../assets/banner.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: rem(500);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .banner-wrapper{
+        @include wrapper;
+    }
+    .banner-container{
+        @include vertical-spacing-inner;
+    }
+    .banner-title{
+        @include title(1);
+        margin-bottom: rem(40);
+        color: $white;
+    }
+    .banner-btn{
+        @include resetBtn;
+        @include cta;
+    }
+}

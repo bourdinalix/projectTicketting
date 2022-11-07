@@ -1,0 +1,36 @@
+@import '~src/imports';
+
+.footer{
+    border-top: rem(1) solid $grey-light;
+    padding-top: rem(20);
+    padding-bottom: rem(20);
+    .footer-wrapper{
+        @include wrapper;
+        display: flex;
+        justify-content: space-between;
+    }
+    .footer-container{
+        width: 33%;
+        img{
+            object-fit: cover;
+            width: 25%;
+            height: auto;
+            margin-bottom: rem(20);
+        }
+    }
+    .footer-policy{
+        width: 33%;
+        text-align: center;
+    }
+    .footer-community{
+        width: 33%;
+        text-align: center;
+    }
+    .footer-policy-title, .footer-community-title{
+        font-weight: bold;
+        margin-bottom: rem(20);
+    }
+    .footer-policy-elements, .footer-community-elements{
+        list-style-type: none;
+    }
+}

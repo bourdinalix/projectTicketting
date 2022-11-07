@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&display=swap');
+
+// ------------------------------------------------------------
+// VARIABLES
+// ------------------------------------------------------------
+
+// -------------------------
+// Path
+// -------------------------
+//$base-images: "../images";
+//$base-fonts: "../fonts";
+
+// -------------------------
+// Colors
+// -------------------------
+$white: #fff;
+$black: #000;
+$grey-dark: #333333;
+$grey: #707070;
+$grey-light: #DEDEDE;
+$grey-ulight: #F5F5F5;
+$red: #c82a28;
+$orange: #f5a623;
+$green: #1da763;
+$blue: #36A2EB;
+$blue-dark: #085EC2;
+$yellow: #ffeab2;
+
+// socials
+$social-fb: #3b5998;
+$social-tw: #3B9EF2;
+$social-goo: #dd4b39;
+$social-dp: #007ee5;
+$social-in: #d73576;
+// variables
+$color-main: $blue;
+$color-second: $blue-dark;
+
+$color-error: $red;
+$color-success: $green;
+
+// -------------------------
+// Typography
+// -------------------------
+
+/* -----
+Font size
+----- */
+$px-base: 16;
+
+/* -----
+Font Family
+----- */
+$font-default: 'Montserrat', sans-serif;
+
+// -------------------------
+// Breakpoints
+// -------------------------
+$breakpoint-phablet: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+$breakpoint-desktop-xl: 1280px;
+$breakpoint-burger: 1200px;
+
+$wrapper-max: 1440px;
+$wrapper-width-sm: 95%;
+$wrapper-width-md: 95%;
+$wrapper-width-lg: 90%;
+
+$vertical-spacing-mobile: 40px;
+$vertical-spacing-tablet: 50px;
+$vertical-spacing-desktop: 70px;
+
+$header-top-height: 35px;
+$header-main-height-desktop: 90px;
+$header-main-height-mobile: 60px;
+
+$header-height-mobile: 100px;
+$header-height-desktop: $header-top-height + $header-main-height-desktop;
+$header-height-scroll: 60px;
+// -------------------------
+// Easing
+// -------------------------
+$ease-in-quad:      cubic-bezier(0.550,  0.085, 0.680, 0.530);
+$ease-in-cubic:     cubic-bezier(0.550,  0.055, 0.675, 0.190);
+$ease-in-quart:     cubic-bezier(0.895,  0.030, 0.685, 0.220);
+$ease-in-quint:     cubic-bezier(0.755,  0.050, 0.855, 0.060);
+$ease-in-sine:      cubic-bezier(0.470,  0.000, 0.745, 0.715);
+$ease-in-expo:      cubic-bezier(0.950,  0.050, 0.795, 0.035);
+$ease-in-circ:      cubic-bezier(0.600,  0.040, 0.980, 0.335);
+$ease-in-back:      cubic-bezier(0.600, -0.280, 0.735, 0.045);
+
+$ease-out-quad:     cubic-bezier(0.250,  0.460, 0.450, 0.940);
+$ease-out-cubic:    cubic-bezier(0.215,  0.610, 0.355, 1.000);
+$ease-out-quart:    cubic-bezier(0.165,  0.840, 0.440, 1.000);
+$ease-out-quint:    cubic-bezier(0.230,  1.000, 0.320, 1.000);
+$ease-out-sine:     cubic-bezier(0.390,  0.575, 0.565, 1.000);
+$ease-out-expo:     cubic-bezier(0.190,  1.000, 0.220, 1.000);
+$ease-out-circ:     cubic-bezier(0.075,  0.820, 0.165, 1.000);
+$ease-out-back:     cubic-bezier(0.175,  0.885, 0.320, 1.275);
+
+$ease-in-out-quad:  cubic-bezier(0.455,  0.030, 0.515, 0.955);
+$ease-in-out-cubic: cubic-bezier(0.645,  0.045, 0.355, 1.000);
+$ease-in-out-quart: cubic-bezier(0.770,  0.000, 0.175, 1.000);
+$ease-in-out-quint: cubic-bezier(0.860,  0.000, 0.070, 1.000);
+$ease-in-out-sine:  cubic-bezier(0.445,  0.050, 0.550, 0.950);
+$ease-in-out-expo:  cubic-bezier(1.000,  0.000, 0.000, 1.000);
+$ease-in-out-circ:  cubic-bezier(0.785,  0.135, 0.150, 0.860);
+$ease-in-out-back:  cubic-bezier(0.680, -0.550, 0.265, 1.550);
+
+/* -----
+Transition
+----- */
+$transition-in-duration: .2s;
+$transition-in-ease: $ease-in-sine;
+$transition-out-duration: .5s;
+$transition-out-ease: $ease-out-sine;
+$transition-in-hover: 0.15s $ease-in-quad;
+$transition-out-hover: 0.25s $ease-out-quad;
+
+/* Tobii variables (v2.3) */
+:root {
+  --base-font-size: 18px; /* also update --slide-max-height */
+
+  --transition-duration: 0.3s;
+  --transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+
+  --zoom-icon-background: hsla(210, 38%, 16%, 0.94);
+  --zoom-icon-color: #ffffff;
+
+  --lightbox-background: rgba(0,0,0,0.85);
+  --lightbox-z-index: 1337;
+
+  --caption-background: rgba(0,0,0,0.8);
+  --caption-color: #eeeeee;
+
+  --counter-background: transparent;
+  --counter-color: #ffffff;
+
+  --button-background: transparent;
+  --button-navigation-background: rgba(0,0,0,0.5);
+  --button-color: #ffffff;
+
+  --loader-color: #ffffff;
+
+  --slide-max-height: calc(100vh - 2.77778em); /* 50/18px, em() does not work here */
+  --slide-max-width: 100vw;
+}

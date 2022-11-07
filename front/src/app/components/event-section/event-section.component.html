@@ -1,0 +1,38 @@
+<div class="event">
+    <div class="event-wrapper">
+        <h2 class="event-title">Evénements populaire</h2>
+        <div class="event-card-wrapper" *ngIf="events$ | async as events">
+            <swiper [pagination]="{dynamicBullets: true, clickable: true}" [slidesPerView]="3" [spaceBetween]="30" class="mySwiper">
+                <ng-template swiperSlide *ngFor="let event of events">
+                    <app-event-card [event]="event"></app-event-card>
+                </ng-template>
+            </swiper>
+        </div>
+    </div>
+</div>
+
+<div class="event">
+    <div class="event-wrapper">
+        <h2 class="event-title">Evénements musicaux</h2>
+        <div class="event-card-wrapper" *ngIf="eventsMusic$ | async as eventsMusic">
+            <swiper [pagination]="{dynamicBullets: true, clickable: true}" [slidesPerView]="3" [spaceBetween]="30" class="mySwiper">
+                <ng-template swiperSlide *ngFor="let event of eventsMusic">
+                    <app-event-card [event]="event"></app-event-card>
+                </ng-template>
+            </swiper>
+        </div>
+    </div>
+</div>
+
+<div class="event">
+    <div class="event-wrapper">
+        <h2 class="event-title">Evénements Sportifs</h2>
+        <div class="event-card-wrapper" *ngIf="eventsSport$ | async as eventsSport">
+            <swiper [pagination]="{dynamicBullets: true, clickable: true}" [slidesPerView]="3" [spaceBetween]="30" class="mySwiper">
+                <ng-template swiperSlide *ngFor="let event of eventsSport">
+                    <app-event-card [event]="event"></app-event-card>
+                </ng-template>
+            </swiper>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+<div class="auth-card">
+    <div class="auth-card-wrapper">
+
+      <div class="auth-card-form-container">
+
+        <h1 class="auth-card-title">{{ title }}</h1>
+
+        <div class="auth-card-error" *ngIf="displayError && from === 'login' ">Les identifiants sont incorrects</div>
+
+        <form class="auth-card-form" *ngIf="userForm" [formGroup]="userForm">
+          <ng-template [ngIf]="from === 'register'">
+            <mat-form-field appearance="outline">
+              <mat-label>Prénom</mat-label>
+              <input matInput name="firstame" formControlName="firstname">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Nom de famille</mat-label>
+              <input matInput name="lastname" formControlName="lastname">
+            </mat-form-field>
+          </ng-template>
+          <mat-form-field appearance="outline">
+            <mat-label>Entrez votre adresse e-mail</mat-label>
+            <input matInput placeholder="pat@example.com" name="email" formControlName="email">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Entrez votre mot de passe</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" name="password" formControlName="password">
+          </mat-form-field>
+
+          <button mat-raised-button (click)="onSubmit()" [disabled]="userForm.invalid">{{ labelBtn }}</button>
+        </form>
+
+        <p class="auth-card-txt">{{ labelAuth }}<a class="auth-card-link" [routerLink]=" '/' + linkAuth">{{ labelAuth2 }}</a></p>
+
+      </div>
+
+      <div class="auth-card-media">
+        <img src="assets/event.jpg" alt="">
+      </div>
+
+    </div>
+  </div>

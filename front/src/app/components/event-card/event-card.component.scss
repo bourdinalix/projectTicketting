@@ -1,0 +1,37 @@
+@import '~src/imports';
+
+.event-card{
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-width: rem(380);
+    min-height: rem(220);
+    padding: rem(25);
+    border-radius: rem(10);
+    .event-card-background{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba($black, 0.5);
+        border-radius: rem(10);
+    }
+    .event-card-wrapper{
+        z-index: 10;
+        color: $white;
+    }
+    .event-card-title{
+        @include title(4);
+    }
+    .event-card-container{
+        position: absolute;
+        left: rem(25);
+        right: rem(25);
+        bottom: rem(25);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}

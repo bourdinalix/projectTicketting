@@ -1,0 +1,258 @@
+@charset "UTF-8";
+
+$color-main: #000 !default;
+
+$wrapper-max: 1500px !default;
+$wrapper-width-sm: 95% !default;
+$wrapper-width-md: 90% !default;
+$wrapper-width-lg: 90% !default;
+
+$vertical-spacing-mobile: 50px !default;
+$vertical-spacing-tablet: 60px !default;
+$vertical-spacing-desktop: 80px !default;
+
+// ------------------------------------------------------------
+// MIXINS
+// ------------------------------------------------------------
+
+@mixin wrapper {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: $wrapper-width-sm;
+  max-width: $wrapper-max;
+  @include desktop {
+    width: $wrapper-width-md;
+  }
+  @include desktop-xl {
+    width: $wrapper-width-lg;
+  }
+}
+
+@mixin fullSize {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow: hidden;
+}
+
+@mixin vertical-spacing-top($facteur: 1) {
+  margin-top: $vertical-spacing-mobile*$facteur;
+  @include tablet {
+    margin-top: $vertical-spacing-tablet*$facteur;
+  }
+  @include desktop {
+    margin-top: $vertical-spacing-desktop*$facteur;
+  }
+}
+
+@mixin vertical-spacing-bottom($facteur: 1) {
+  margin-bottom: $vertical-spacing-mobile*$facteur;
+  @include tablet {
+    margin-bottom: $vertical-spacing-tablet*$facteur;
+  }
+  @include desktop {
+    margin-bottom: $vertical-spacing-desktop*$facteur;
+  }
+}
+
+@mixin vertical-spacing($facteur: 1) {
+  @include vertical-spacing-top($facteur);
+  @include vertical-spacing-bottom($facteur);
+}
+
+@mixin vertical-spacing-inner-top($facteur: 1) {
+  padding-top: $vertical-spacing-mobile*$facteur;
+  @include tablet {
+    padding-top: $vertical-spacing-tablet*$facteur;
+  }
+  @include desktop {
+    padding-top: $vertical-spacing-desktop*$facteur;
+  }
+}
+
+@mixin vertical-spacing-inner-bottom($facteur: 1) {
+  padding-bottom: $vertical-spacing-mobile*$facteur;
+  @include tablet {
+    padding-bottom: $vertical-spacing-tablet*$facteur;
+  }
+  @include desktop {
+    padding-bottom: $vertical-spacing-desktop*$facteur;
+  }
+}
+
+@mixin vertical-spacing-inner($facteur: 1) {
+  @include vertical-spacing-inner-top($facteur);
+  @include vertical-spacing-inner-bottom($facteur);
+}
+
+// -------------------------
+// Resets
+// -------------------------
+
+@mixin resetList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin resetBtn {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 0;
+  white-space: normal;
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  -webkit-appearance: none;
+
+  &:not(input) {
+    user-select: none;
+  }
+  &:hover {
+    text-decoration: none;
+  }
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+}
+
+// -------------------------
+// Basics
+// -------------------------
+
+@mixin size($value) {
+  $width: nth($value, 1);
+  $height: $width;
+
+  @if length($value) > 1 {
+    $height: nth($value, 2);
+  }
+
+  width: $width;
+  height: $height;
+}
+
+@mixin centerBlock {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin absolute {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+@mixin fixed {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+@mixin hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@mixin visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+@mixin unselectable {
+  cursor: default;
+  user-select: none;
+}
+
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+}
+
+@mixin imageCover {
+  bottom: -10000%;
+  height: auto;
+  left: -10000%;
+  margin: auto auto;
+  min-height: 1000%;
+  min-width: 1000%;
+  overflow: hidden;
+  position: absolute;
+  right: -10000%;
+  top: -10000%;
+  transform: scale(.101);
+  width: auto;
+  z-index: 1;
+  max-width: inherit;
+}
+
+@mixin loader($color: $color-main, $scale: 1) {
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    border: rem(3 * $scale) solid rgba($color, .1);
+    border-top: rem(3 * $scale) solid rgba($color, 1);
+    border-radius: 50%;
+    width: rem(30 * $scale);
+    height: rem(30 * $scale);
+    animation: loaderAnimation 2s linear infinite;
+    @content;
+  }
+}
+
+@keyframes loaderAnimation {
+  0% {
+    transform: translateX(-50%) translateY(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-50%) rotate(360deg);
+  }
+}
+
+@mixin hideAccess {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  word-wrap: normal;
+  &.focusable:focus {
+    position: static !important;
+    clip: auto;
+    overflow: visible;
+    height: auto;
+    width: auto;
+  }
+}
+
+.hide-access{
+  @include hideAccess;
+}

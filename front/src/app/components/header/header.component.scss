@@ -1,0 +1,53 @@
+@import '~src/imports';
+
+.header{
+    background-color: $white;
+    padding-top: rem(20);
+    padding-bottom: rem(20);
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 100;
+    .header-wrapper{
+        @include wrapper;
+    }
+    .header-container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .header-content{
+        display: flex;
+        align-items: center;
+    }
+    .header-media{
+        padding-top: rem(10);
+    }
+    .header-link{
+        img{
+            object-fit: cover;
+            width: 25%;
+            height: auto;
+        }
+    }
+    .header-elements{
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+    }
+    .header-element{
+        margin-right: rem(20);
+        margin-left: rem(20);
+        &:last-child{
+            margin-right: 0;
+        }
+    }
+    .header-link{
+        color: $black;
+        font-size: rem(16);
+    }
+    .header-link-co{
+        color: $red;
+    }
+}

@@ -1,0 +1,53 @@
+@mixin title($level: 1) {
+  font-family: $font-default;
+  font-weight: 300;
+  @if ($level==1) {
+    font-size: rem(30);
+    @include tablet {
+      font-size: rem(40);
+    }
+    @include desktop {
+      font-size: rem(50);
+    }
+    @include desktop-xl {
+      font-size: rem(64);
+    }
+  }
+  @if($level==2) {
+    font-size: rem(25);
+    @include tablet {
+      font-size: rem(30);
+    }
+    @include desktop {
+      font-size: rem(35);
+    }
+    @include desktop-xl {
+      font-size: rem(40);
+    }
+  }
+  @if($level==3) {
+    font-size: rem(20);
+    @include tablet {
+      font-size: rem(24);
+    }
+    @include desktop {
+      font-size: rem(28);
+    }
+    @include desktop-xl {
+      font-size: rem(32);
+    }
+  }
+  @if($level==4) {
+    font-weight: 400;
+    font-size: rem(18);
+    @include desktop {
+      font-size: rem(20);
+    }
+  }
+}
+
+@mixin text {
+  line-height: 1.5;
+  font-family: $font-default;
+  font-size: rem(16);
+}

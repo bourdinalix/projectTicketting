@@ -1,0 +1,31 @@
+@mixin cta($color: $white, $background: $red) {
+    @include resetBtn;
+    display: inline-block;
+    background-color: $background;
+    color: $color;
+    padding: rem(20) rem(35);
+    transition: background-color $transition-out-hover;
+    border-radius: rem(5);
+    &:not([disabled]) {
+      &:hover, &:focus {
+        color: $color;
+        background-color: lighten($background, 5%);
+        transition: background-color $transition-in-hover;
+      }
+    }
+    &[disabled] {
+      background-color: $grey-light;
+      color: $grey;
+      opacity: .5;
+      cursor: not-allowed;
+    }
+    &.is-loading {
+      padding-right: rem(50);
+      transition: padding-right .2s;
+      @include loader($white, .8) {
+        left: auto;
+        right: 0;
+      }
+    }
+    @content;
+  }
